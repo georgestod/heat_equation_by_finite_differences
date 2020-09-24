@@ -81,11 +81,10 @@ toc
 return
 
 %% plotting exp vs. sim
-
 figure(3);clf
 colormap winter
 
-for i=2%:length(time)
+for i=2:length(time)
     Msim=S(:,:,i)-273.15; % from kelvins to degrees
     image(Msim,'CDataMapping','scaled')
     colorbar
@@ -97,9 +96,9 @@ for i=2%:length(time)
     t_star_sim(i-1,1) = time(i-1);
     
     pause(0.1)
-    
-    
 end
+
+
 
 
 %% generating some data for machine learning
@@ -123,19 +122,15 @@ end
 %
 save('antartica2DHR_training.mat','t_star','w_star','X_star')
 
-
-
 % validation data - +1/3
 t_star=t_star_sim;
 w_star=wstar_sim+273.15;
 %
 save('antartica2DHR_validation.mat','t_star','w_star','X_star')
 
-
 return
 
 %% verification
-
 figure(4);clf
 colormap winter
 
@@ -144,11 +139,6 @@ for i=2%:length(time)
     image(Msim,'CDataMapping','scaled')
     colorbar
     %caxis([0 10])
-    
-    
-    
-    
-    
 end
 
 
