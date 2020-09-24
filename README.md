@@ -1,9 +1,11 @@
 # Linear heat equation solver by finite differences
 
 The heat equation is a beautiful equation that can be derived from first principles. Stating the energy conservation law leads to,
+
 \begin{equation*}
 \frac{d}{dt} \Big( \underbrace{\int_D \rho \cdot c_p \cdot T \cdot dv}_{\text{total energy}} \Big ) =  \underbrace{\int_{\partial D} k \nabla \cdot T \cdot n \cdot dS}_{\text{power through boundaries}} + \underbrace{\int_D q \cdot dv}_{\text{power source term}}
 \end{equation*}
+
 which becomes by introducing the divergence operator,
 \begin{equation*}
 \frac{d}{dt} \Big( \int_D \rho \cdot c_p \cdot T \cdot dv \Big ) =  \int_{D} \nabla \cdot (k \nabla \cdot T) dv + \int_D q \cdot dv
